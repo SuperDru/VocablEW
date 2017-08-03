@@ -5,6 +5,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
+using System.IO;
 
 namespace VocablEW
 {
@@ -17,16 +18,7 @@ namespace VocablEW
 
         public WorkWithWords()
         {
-            try
-            {
                 data = new DataHandler("Data.xml");
-            }
-            catch
-            {
-                MessageBox.Show("Data.xml absent in this folder.");
-                ((IDisposable)Application.Current.MainWindow).Dispose();
-                Application.Current.MainWindow.Close();
-            }
         }
 
         //Получает рандомное слово из xml документа

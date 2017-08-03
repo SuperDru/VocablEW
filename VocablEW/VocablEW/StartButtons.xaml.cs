@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Threading;
 using System.Media;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace VocablEW
 {
@@ -208,7 +209,7 @@ namespace VocablEW
                 windowAdding.Close();
             if (windowWords != null)
                 windowWords.Close();
-            Close();
+            Application.Current.Shutdown();
         }
     }
 }

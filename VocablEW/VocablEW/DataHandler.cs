@@ -32,7 +32,15 @@ namespace VocablEW
         public DataHandler(string path)
         {
             this.path = path;
-            doc.Load(path);
+            try
+            {
+                doc.Load(path);
+            }
+            catch
+            {
+                MessageBox.Show("Data.xml absent in this folder.");
+                Environment.Exit(0);
+            }
             studyingWords = (XmlElement)doc.DocumentElement.ChildNodes[0];
             studiedWords = (XmlElement)doc.DocumentElement.ChildNodes[1];
             maxIdStudying = studyingWords.ChildNodes.Count - 1;

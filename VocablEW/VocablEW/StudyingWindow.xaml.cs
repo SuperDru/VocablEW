@@ -31,7 +31,8 @@ namespace VocablEW
             try
             {
                 stw = new StudyingWords();
-            } catch
+            }
+            catch
             {
                 return;
             }
