@@ -76,9 +76,6 @@
     <Compile Include="WindowOfAdding.xaml.cs">
       <DependentUpon>WindowOfAdding.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\..\..\..\..\Source\Repos\VocablEW\WorkWithWords.cs">
-      <Link>WorkWithWords.cs</Link>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -87,6 +84,7 @@
     <Compile Include="StudyingWords.cs" />
     <Compile Include="DataHandler.cs" />
     <Compile Include="IWorkWithWords.cs" />
+    <Compile Include="WorkWithWords.cs" />
     <Page Include="CheckingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
