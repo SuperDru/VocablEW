@@ -4,15 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace VocablEW
 {
     public abstract class WorkWithWords : IWorkWithWords
     {
         protected static Random rand = new Random();
-        protected DataHandler data = new DataHandler("Data.xml");
+        protected DataHandler data;
         protected string issueWord, correctWord;
         protected int id;
+
+        public WorkWithWords()
+        {
+            try
+            {
+                data = new DataHandler("Data.xml");
+            }
+            catch
+            {
+                MessageBox.Show("Data.xml absent in this folder.");
+                ((IDisposable)Application.Current.MainWindow).Dispose();
+                Application.Current.MainWindow.Close();
+            }
+        }
 
         //Получает рандомное слово из xml документа
         public abstract string getWord();
