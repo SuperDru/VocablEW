@@ -23,11 +23,18 @@ namespace VocablEW
     /// </summary>
     public partial class StudyingWindow : Window
     {
-        StudyingWords stw = new StudyingWords();
+        StudyingWords stw;
         string issueWord, correctWord;
         int count;//счётчик
         public StudyingWindow()
         {
+            try
+            {
+                stw = new StudyingWords();
+            } catch
+            {
+                return;
+            }
             InitializeComponent();
             imgRemove.Source = BitmapToImageSource(Properties.Resources.Remove);
             handleWords();

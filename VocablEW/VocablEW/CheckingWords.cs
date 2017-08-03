@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace VocablEW
 {
@@ -10,6 +11,16 @@ namespace VocablEW
     {
         //Комменатрии к перезаписанным методам даны в классе-предке
         List<int> randCheck = new List<int>();
+
+        public CheckingWords()
+        {
+            if (data.MaxIdStudying < 20)
+            {
+                MessageBox.Show("There are less than twenty words in the dictionary of checking words, the window will appear as soon as there are more than nineteen words.", "Warning");
+                throw new Exception();
+            }
+        }
+
         public override string getWord()
         {
             int k = rand.Next(0, 2);

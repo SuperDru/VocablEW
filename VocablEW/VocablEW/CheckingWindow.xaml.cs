@@ -20,11 +20,19 @@ namespace VocablEW
     /// </summary>
     public partial class CheckingWindow : Window
     {
-        CheckingWords chw = new CheckingWords();
+        CheckingWords chw;
         string issueWord, correctWord;
         int count;
         public CheckingWindow()
         {
+            try
+            {
+                chw = new CheckingWords();
+            }
+            catch
+            {
+                return;
+            }
             InitializeComponent();
             handleWords();
         }
