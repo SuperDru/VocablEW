@@ -1,0 +1,42 @@
+﻿<Window x:Class="VocablEW.CheckingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VocablEW"
+        mc:Ignorable="d"
+        Title="CheckingWindow" Height="124.49" Width="361.702" Closing="Window_Closing" WindowStyle="None" AllowsTransparency="True" Background="Transparent" Topmost="True">
+    <Window.Resources>
+        <ControlTemplate TargetType="Button" x:Key="btnTemplate">
+            <Border x:Name="buttonBorder" CornerRadius="5" BorderBrush="CadetBlue" BorderThickness="2" Background="{TemplateBinding Background}">
+                <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter TargetName="buttonBorder" Property="Background" Value="#FF823DF3"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter TargetName="buttonBorder" Property="BorderBrush" Value="DarkBlue" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Foreground" Value="Gray"/>
+                    <Setter TargetName="buttonBorder" Property="Background" Value="LightGray"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Canvas>
+            <Rectangle Fill="#FF1B1B23" HorizontalAlignment="Left" Height="114" StrokeThickness="7" Stroke="#FF03075B" VerticalAlignment="Top" Width="352"
+                   RadiusX="15" RadiusY="15" Canvas.Left="10" Canvas.Top="10"/>
+            <TextBox x:Name="entryField" Canvas.Left="28" TextWrapping="Wrap" Text="TextBox" Canvas.Top="54" Width="239"
+                     FontSize="18" Background="#FF35405D" KeyUp="entryField_KeyUp"/>
+            <Label x:Name="lblIssue" Content="Label" Canvas.Left="25" Canvas.Top="24" FontSize="18" Foreground="Black"/>
+            <Button x:Name="btnCheck" Template="{StaticResource btnTemplate}" Canvas.Left="272" Canvas.Top="55" Width="75" Height="25" 
+                    FontSize="16" Background="#FF35405D" Content="Check" Click="btnCheck_Click"/>
+            <Button x:Name="btnOpenWeb" Template="{StaticResource btnTemplate}" Content="Open Web" Canvas.Left="253"
+                    Height="25" Canvas.Top="24" Width="94" FontSize="16" Background="#FF35405D" Click="btnOpenWeb_Click"/>
+            <Label x:Name="lblCorrect" Content="Label" Canvas.Left="25" Canvas.Top="75" FontSize="18" Foreground="Black"/>
+        </Canvas>
+    </Grid>
+</Window>

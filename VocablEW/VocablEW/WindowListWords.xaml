@@ -1,0 +1,20 @@
+﻿<Window x:Class="VocablEW.WindowListWords"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VocablEW"
+        mc:Ignorable="d"
+        Title="WindowListWords" Height="291.489" Width="488.298" Background="Transparent" AllowsTransparency="True" WindowStyle="None" LostKeyboardFocus="Window_LostKeyboardFocus">
+    <Grid>
+        <Canvas>
+            <Rectangle Fill="#FF1B1B23" Height="291" RadiusY="15" RadiusX="15" Stroke="Black" StrokeThickness="7" Width="488"/>
+            <TextBox x:Name="studying" AcceptsReturn="True" Height="271" Canvas.Left="31" TextWrapping="Wrap" 
+                     Canvas.Top="10" Width="210" Background="#FF35405D" IsReadOnly="True" FontSize="12"/>
+            <TextBox x:Name="studied" AcceptsReturn="True" Height="271" Canvas.Left="249" TextWrapping="Wrap" 
+                     Canvas.Top="10" Width="210" Background="#FF35405D" IsReadOnly="True" FontSize="12">
+                
+            </TextBox>
+        </Canvas>
+    </Grid>
+</Window>
